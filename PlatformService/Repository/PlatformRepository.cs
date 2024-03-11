@@ -30,7 +30,7 @@ public class PlatformRepository : IPlatformRepository
 
     public Platform GetPlatformById(int id)
     {
-        return _context.Platforms.FirstOrDefault(p => p.Id == id);
+        return _context.Platforms.FirstOrDefault(p => p.Id == id)!;
     }
 
     public bool SaveChanges()
