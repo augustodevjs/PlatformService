@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: commands-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: commandservice
+  template: 
+    metadata:
+      labels:
+        app: commandservice
+    spec: 
+      containers:
+        - name: commandservice
+          image: jaugustodev/commandsservice:latest
