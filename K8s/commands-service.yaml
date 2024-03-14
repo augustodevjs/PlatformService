@@ -15,3 +15,17 @@ spec:
       containers:
         - name: commandservice
           image: jaugustodev/commandsservice:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: command-service-cluster-ip
+spec:
+  type: ClusterIP
+  selector:
+    app: commandservice
+  ports:
+  - name: commandservice
+    port: 80
+    targetPort: 80
+    protocol: TCP

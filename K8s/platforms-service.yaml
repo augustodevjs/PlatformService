@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: platforms-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: platformservice
+  template: 
+    metadata:
+      labels:
+        app: platformservice
+    spec: 
+      containers:
+        - name: platformservice
+          image: jaugustodev/platformservice:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: platform-service-node-port
+spec:
+  type: NodePort
+  selector:
+    app: platformservice
+  ports:
+  - name: platformservice
+    port: 80
+    targetPort: 80
+    protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: platform-service-cluster-ip
+spec:
+  type: ClusterIP
+  selector:
+    app: platformservice
+  ports:
+  - name: platformservice
+    port: 80
+    targetPort: 80
+    protocol: TCP
