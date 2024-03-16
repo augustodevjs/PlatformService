@@ -1,5 +1,6 @@
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\appsettings.json
+C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\appsettings.Production.json
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\PlatformService.exe
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\PlatformService.deps.json
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\PlatformService.runtimeconfig.json
@@ -8,14 +9,17 @@ C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Pla
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\AutoMapper.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Azure.Core.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Azure.Identity.dll
+C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Humanizer.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Microsoft.Identity.Client.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
@@ -27,9 +31,11 @@ C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Mic
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Microsoft.OpenApi.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\System.CodeDom.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\System.Drawing.Common.dll
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
@@ -57,6 +63,7 @@ C:\Users\joaoa\source\repos\PlatformService\PlatformService\obj\Debug\net7.0\Pla
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\obj\Debug\net7.0\PlatformService.csproj.CoreCompileInputs.cache
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\obj\Debug\net7.0\PlatformService.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\obj\Debug\net7.0\PlatformService.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\joaoa\source\repos\PlatformService\PlatformService\obj\Debug\net7.0\PlatformService.sourcelink.json
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\obj\Debug\net7.0\staticwebassets.development.json
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\obj\Debug\net7.0\staticwebassets\msbuild.PlatformService.Microsoft.AspNetCore.StaticWebAssets.props

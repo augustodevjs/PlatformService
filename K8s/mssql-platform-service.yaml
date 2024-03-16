@@ -14,21 +14,21 @@ spec:
     spec: 
       containers:
         - name: mssql
-          image: mcr.microsoft.com/mssql/server
+          image: mcr.microsoft.com/mssql/server:2017-latest
           ports:
             - containerPort: 1433
           env:
           - name: MSSQL_PID
-            value: "Express"
+            value: "Developer"
           - name: ACCEPT_EULA
             value: "Y"
-          - name: SA_PASSWORD
+          - name: MSSQL_SA_PASSWORD 
             valueFrom:
                 secretKeyRef:
-                    name: mssql
+                    name: mssql-secret
                     key: SA_PASSWORD
           volumeMounts:
-          - mountPath: /var/opt/mssql/data
+          - mountPath: "/var/opt/mssql"
             name: mssqldb
       volumes:
       - name: mssqldb

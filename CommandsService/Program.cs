@@ -1,4 +1,3 @@
-
 namespace CommandsService;
 
 public class Program
