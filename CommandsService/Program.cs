@@ -1,3 +1,8 @@
+using CommandsService.Data;
+using CommandsService.Contracts;
+using CommandsService.Repository;
+using Microsoft.EntityFrameworkCore;
+
 namespace CommandsService;
 
 public class Program
@@ -9,7 +14,12 @@ public class Program
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+
+        builder.Services.AddScoped<ICommandRepository, CommandRepository>();
         builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+        builder.Services.AddDbContext<AppDbContext>(
+            options => options.UseInMemoryDatabase("InMem")
+        );
 
         var app = builder.Build();
 
@@ -19,7 +29,6 @@ public class Program
             app.UseSwaggerUI();
         }
 
-        //app.UseHttpsRedirection();
 
         app.UseAuthorization();
 
