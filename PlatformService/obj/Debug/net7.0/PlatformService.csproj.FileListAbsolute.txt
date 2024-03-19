@@ -78,3 +78,4 @@ C:\Users\joaoa\source\repos\PlatformService\PlatformService\obj\Debug\net7.0\ref
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\obj\Debug\net7.0\PlatformService.pdb
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\obj\Debug\net7.0\PlatformService.genruntimeconfig.cache
 C:\Users\joaoa\source\repos\PlatformService\PlatformService\obj\Debug\net7.0\ref\PlatformService.dll
+C:\Users\joaoa\source\repos\PlatformService\PlatformService\bin\Debug\net7.0\RabbitMQ.Client.dll

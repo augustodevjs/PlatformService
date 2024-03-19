@@ -12,19 +12,22 @@ public class PlatformsController : ControllerBase
 {
     private readonly IMapper _mapper;
     private readonly IPlatformRepository _repository;
+    private readonly IMessageBusClient _messageBusClient;
     private readonly ILogger<PlatformsController> _logger;
     private readonly ICommandDataClient _commandDataClient;
 
     public PlatformsController(
-        IMapper mapper, 
-        IPlatformRepository repository, 
-        ILogger<PlatformsController> logger, 
+        IMapper mapper,
+        IPlatformRepository repository,
+        IMessageBusClient messageBusClient,
+        ILogger<PlatformsController> logger,
         ICommandDataClient commandDataClient
     )
     {
         _mapper = mapper;
         _logger = logger;
         _repository = repository;
+        _messageBusClient = messageBusClient;
         _commandDataClient = commandDataClient;
     }
 
@@ -64,6 +67,8 @@ public class PlatformsController : ControllerBase
 
         var platformReadDto = _mapper.Map<PlatformReadDto>(platformModel);
 
+        // Send Sync Message
+
         try
         {
             await _commandDataClient.SendPlatformToCommand(platformReadDto);
@@ -71,6 +76,23 @@ public class PlatformsController : ControllerBase
         catch (Exception ex)
         {
             string message = $"--> Could not send synchronously: {ex.Message}";
+
+            _logger.LogError(message);
+        }
+
+        // Send Async Message
+
+        try
+        {
+            var platformPushedDto = _mapper.Map<PlatformPublishedDto>(platformReadDto);
+            platformPushedDto.Event = "Platform_Published";
+
+            _messageBusClient.PublishNewPlatform(platformPushedDto);
+        }
+        catch (Exception ex)
+        {
+
+            string message = $"--> Could not send asynchronously: {ex.Message}";
 
             _logger.LogError(message);
         }
