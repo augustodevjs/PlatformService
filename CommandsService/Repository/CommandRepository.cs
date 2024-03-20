@@ -1,6 +1,7 @@
 ﻿using CommandsService.Data;
 using CommandsService.Models;
 using CommandsService.Contracts;
+using System;
 
 namespace CommandsService.Repository;
 
@@ -56,6 +57,11 @@ public class CommandRepository : ICommandRepository
     public bool PlatformExist(int platformId)
     {
         return _context.Platforms.Any(p => p.Id == platformId);
+    }
+
+    public bool ExternalPlatformExist(int externalPlatformId)
+    {
+        return _context.Platforms.Any(p => p.ExternalID == externalPlatformId);
     }
 
     public bool SaveChanges()
