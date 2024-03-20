@@ -2,6 +2,7 @@ using CommandsService.Data;
 using CommandsService.Contracts;
 using CommandsService.Repository;
 using Microsoft.EntityFrameworkCore;
+using CommandsService.EventProcessing;
 
 namespace CommandsService;
 
@@ -15,6 +16,7 @@ public class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
+        builder.Services.AddSingleton<IEventProcessor, EventProcessor>();
         builder.Services.AddScoped<ICommandRepository, CommandRepository>();
         builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         builder.Services.AddDbContext<AppDbContext>(

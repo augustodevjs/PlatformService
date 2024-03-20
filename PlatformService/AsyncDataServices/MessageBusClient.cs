@@ -3,6 +3,7 @@ using RabbitMQ.Client;
 using System.Text.Json;
 using PlatformService.Dtos;
 using PlatformService.Contracts;
+using RabbitMQ.Client.Exceptions;
 
 namespace PlatformService.AsyncDataServices;
 
@@ -32,13 +33,23 @@ public class MessageBusClient : IMessageBusClient
             _channel = _connection.CreateModel();
 
             _channel.ExchangeDeclare(exchange: "trigger", type: ExchangeType.Fanout);
+            _channel.QueueDeclare(queue: "platformQueue", durable: true, exclusive: false, autoDelete: false, arguments: null);
+            _channel.QueueBind(queue: "platformQueue", exchange: "trigger", routingKey: "");
             _connection.ConnectionShutdown += RabbitMQ_ConnectionShutdown;
 
             _logger.LogInformation("--> Connect to MessageBus");
         }
+        catch (BrokerUnreachableException ex)
+        {
+            _logger.LogError($"--> Could not connect to the RabbitMQ broker: {ex.Message}");
+        }
+        catch (OperationInterruptedException ex)
+        {
+            _logger.LogError($"--> An operation on RabbitMQ connection/channel failed: {ex.Message}");
+        }
         catch (Exception ex)
         {
-            _logger.LogError($"--> Could not connect to the Message Bus: {ex.Message}");
+            _logger.LogError($"--> An unexpected error occurred: {ex.Message}");
         }
     }
 
