@@ -1,4 +1,4 @@
-﻿using CommandsService.Models;
+﻿using CommandsService.Entities;
 
 namespace CommandsService.Contracts;
 

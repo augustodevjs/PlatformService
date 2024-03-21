@@ -1,8 +1,8 @@
-﻿using PlatformService.Data;
-using PlatformService.Models;
+﻿using PlatformService.Context;
+using PlatformService.Entities;
 using PlatformService.Contracts;
 
-namespace PlatformService.Repository;
+namespace PlatformService.Infraestructure.Persistancy.Repository;
 
 public class PlatformRepository : IPlatformRepository
 {
@@ -15,7 +15,7 @@ public class PlatformRepository : IPlatformRepository
 
     public void CreatePlatform(Platform platform)
     {
-        if(platform == null)
+        if (platform == null)
         {
             throw new ArgumentNullException(nameof(platform));
         }
@@ -35,6 +35,6 @@ public class PlatformRepository : IPlatformRepository
 
     public bool SaveChanges()
     {
-        return (_context.SaveChanges() >= 0);
+        return _context.SaveChanges() >= 0;
     }
 }

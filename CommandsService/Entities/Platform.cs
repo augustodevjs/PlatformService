@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-namespace CommandsService.Models;
+namespace CommandsService.Entities;
 
 public class Platform
 {

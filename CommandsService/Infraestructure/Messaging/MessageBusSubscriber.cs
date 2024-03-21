@@ -3,7 +3,7 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using CommandsService.Contracts;
 
-namespace CommandsService.AsyncDataServices;
+namespace CommandsService.Infraestructure.Messaging;
 
 public class MessageBusSubscriber : BackgroundService
 {
@@ -14,7 +14,7 @@ public class MessageBusSubscriber : BackgroundService
     private readonly ILogger<MessageBusSubscriber> _logger;
 
     public MessageBusSubscriber(
-        IConfiguration configuration, 
+        IConfiguration configuration,
         IEventProcessor eventProcessor,
         ILogger<MessageBusSubscriber> logger
     )

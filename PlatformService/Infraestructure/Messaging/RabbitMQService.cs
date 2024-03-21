@@ -3,20 +3,19 @@ using RabbitMQ.Client;
 using System.Text.Json;
 using PlatformService.Dtos;
 using PlatformService.Contracts;
-using RabbitMQ.Client.Exceptions;
 
-namespace PlatformService.AsyncDataServices;
+namespace PlatformService.Infraestructure.Messaging;
 
-public class MessageBusClient : IMessageBusClient
+public class RabbitMQService : IMessageBusClient
 {
     private readonly IModel _channel;
     private readonly IConnection _connection;
     private readonly IConfiguration _configuration;
-    private readonly ILogger<MessageBusClient> _logger;
+    private readonly ILogger<RabbitMQService> _logger;
 
-    public MessageBusClient(
-        IConfiguration configuration, 
-        ILogger<MessageBusClient> logger
+    public RabbitMQService(
+        IConfiguration configuration,
+        ILogger<RabbitMQService> logger
     )
     {
         _logger = logger;
@@ -49,12 +48,13 @@ public class MessageBusClient : IMessageBusClient
     {
         var message = JsonSerializer.Serialize(platformPublished);
 
-        if(_connection.IsOpen)
+        if (_connection.IsOpen)
         {
             _logger.LogInformation("--> RabbitMQ Connection Open, sending message...");
 
             SendMessage(message);
-        } else
+        }
+        else
         {
             _logger.LogInformation("--> RabbitMQ Connection closed, not sending message...");
         }
@@ -78,7 +78,7 @@ public class MessageBusClient : IMessageBusClient
     {
         _logger.LogInformation($"MessageBus Disposed");
 
-        if(_channel.IsOpen)
+        if (_channel.IsOpen)
         {
             _channel.Close();
             _connection.Close();

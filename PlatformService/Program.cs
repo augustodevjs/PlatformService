@@ -1,9 +1,9 @@
-using PlatformService.Data;
+using PlatformService.Context;
 using Microsoft.OpenApi.Models;
 using PlatformService.Contracts;
-using PlatformService.Repository;
 using Microsoft.EntityFrameworkCore;
-using PlatformService.AsyncDataServices;
+using PlatformService.Infraestructure.Messaging;
+using PlatformService.Infraestructure.Persistancy.Repository;
 
 namespace PlatformService;
 
@@ -30,7 +30,7 @@ public class Program
             );
         }
 
-        builder.Services.AddSingleton<IMessageBusClient, MessageBusClient>();
+        builder.Services.AddSingleton<IMessageBusClient, RabbitMQService>();
         builder.Services.AddScoped<IPlatformRepository, PlatformRepository>();
         builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

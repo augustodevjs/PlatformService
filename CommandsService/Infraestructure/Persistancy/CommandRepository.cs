@@ -1,9 +1,8 @@
-﻿using CommandsService.Data;
-using CommandsService.Models;
+﻿using CommandsService.Context;
+using CommandsService.Entities;
 using CommandsService.Contracts;
-using System;
 
-namespace CommandsService.Repository;
+namespace CommandsService.Infraestructure.Persistancy;
 
 public class CommandRepository : ICommandRepository
 {
@@ -16,7 +15,7 @@ public class CommandRepository : ICommandRepository
 
     public void CreateCommand(int platformId, Command command)
     {
-        if(command == null)
+        if (command == null)
         {
             throw new ArgumentNullException(nameof(command));
         }
@@ -27,7 +26,7 @@ public class CommandRepository : ICommandRepository
 
     public void CreatePlatform(Platform platform)
     {
-        if(platform == null)
+        if (platform == null)
         {
             throw new ArgumentNullException(nameof(platform));
         }
@@ -66,6 +65,6 @@ public class CommandRepository : ICommandRepository
 
     public bool SaveChanges()
     {
-        return (_context.SaveChanges() >= 0);
+        return _context.SaveChanges() >= 0;
     }
 }

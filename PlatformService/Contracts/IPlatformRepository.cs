@@ -1,4 +1,4 @@
-﻿using PlatformService.Models;
+﻿using PlatformService.Entities;
 
 namespace PlatformService.Contracts;
 

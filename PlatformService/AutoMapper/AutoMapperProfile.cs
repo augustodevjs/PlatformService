@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using PlatformService.Dtos;
-using PlatformService.Models;
+using PlatformService.Entities;
 
-namespace PlatformService.Profiles;
+namespace PlatformService.AutoMapper;
 
-public class PlatformsProfile : Profile
+public class AutoMapperProfile : Profile
 {
-    public PlatformsProfile()
+    public AutoMapperProfile()
     {
         CreateMap<Platform, PlatformReadDto>();
         CreateMap<PlatformCreateDto, Platform>();

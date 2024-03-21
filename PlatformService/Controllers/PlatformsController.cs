@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using PlatformService.Dtos;
-using PlatformService.Models;
 using Microsoft.AspNetCore.Mvc;
 using PlatformService.Contracts;
+using PlatformService.Entities;
 
 namespace PlatformService.Controllers;
 

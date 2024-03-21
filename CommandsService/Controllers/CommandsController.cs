@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using CommandsService.Dtos;
-using CommandsService.Models;
+using CommandsService.Entities;
 using Microsoft.AspNetCore.Mvc;
 using CommandsService.Contracts;
 

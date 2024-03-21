@@ -1,9 +1,9 @@
-using CommandsService.Data;
+using CommandsService.Events;
+using CommandsService.Context;
 using CommandsService.Contracts;
-using CommandsService.Repository;
 using Microsoft.EntityFrameworkCore;
-using CommandsService.EventProcessing;
-using CommandsService.AsyncDataServices;
+using CommandsService.Infraestructure.Messaging;
+using CommandsService.Infraestructure.Persistancy;
 
 namespace CommandsService;
 
@@ -21,6 +21,7 @@ public class Program
         builder.Services.AddSingleton<IEventProcessor, EventProcessor>();
         builder.Services.AddScoped<ICommandRepository, CommandRepository>();
         builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
         builder.Services.AddDbContext<AppDbContext>(
             options =>options.UseInMemoryDatabase("InMem")
         );

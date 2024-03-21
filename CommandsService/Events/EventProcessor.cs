@@ -2,10 +2,10 @@
 using System.Text.Json;
 using CommandsService.Dtos;
 using CommandsService.Enum;
-using CommandsService.Models;
 using CommandsService.Contracts;
+using CommandsService.Entities;
 
-namespace CommandsService.EventProcessing;
+namespace CommandsService.Events;
 
 public class EventProcessor : IEventProcessor
 {
@@ -14,7 +14,7 @@ public class EventProcessor : IEventProcessor
     private readonly IServiceScopeFactory _scopeFactory;
 
     public EventProcessor(
-        IMapper mapper, 
+        IMapper mapper,
         ILogger<EventProcessor> logger,
         IServiceScopeFactory scopeFactory
     )
