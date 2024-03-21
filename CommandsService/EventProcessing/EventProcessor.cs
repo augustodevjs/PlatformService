@@ -38,11 +38,11 @@ public class EventProcessor : IEventProcessor
         }
     }
 
-    private EventType DetermineEvent(string notifcationMessage)
+    private EventType DetermineEvent(string notificationMessage)
     {
         _logger.LogInformation("--> Determining Event");
 
-        var eventType = JsonSerializer.Deserialize<GenericEventDto>(notifcationMessage);
+        var eventType = JsonSerializer.Deserialize<GenericEventDto>(notificationMessage);
 
         switch (eventType!.Event)
         {
@@ -75,7 +75,7 @@ public class EventProcessor : IEventProcessor
             }
             else
             {
-                _logger.LogInformation("--> Platform already exisits...");
+                _logger.LogInformation("--> Platform already exists...");
             }
 
         }

@@ -4,7 +4,6 @@ using PlatformService.Contracts;
 using PlatformService.Repository;
 using Microsoft.EntityFrameworkCore;
 using PlatformService.AsyncDataServices;
-using PlatformService.SyncDataServices.Http;
 
 namespace PlatformService;
 
@@ -33,7 +32,6 @@ public class Program
 
         builder.Services.AddSingleton<IMessageBusClient, MessageBusClient>();
         builder.Services.AddScoped<IPlatformRepository, PlatformRepository>();
-        builder.Services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
         builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
         builder.Services.AddControllers();
