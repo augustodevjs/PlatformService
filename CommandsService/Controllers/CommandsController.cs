@@ -40,10 +40,10 @@ public class CommandsController : ControllerBase
         return Ok(_mapper.Map<IEnumerable<CommandReadDto>>(commands));
     }
 
-    [HttpGet("{commandId}", Name = "GetCommandForPlatfortm")]
+    [HttpGet("{commandId}", Name = "GetCommandForPlatform")]
     public ActionResult<CommandReadDto> GetCommandForPlatform(int platformId, int commandId)
     {
-        _logger.LogInformation($"Hit GetCommandForPlatfortm: {platformId} / {commandId}");
+        _logger.LogInformation($"Hit GetCommandForPlatform: {platformId} / {commandId}");
 
         if (!_repository.PlatformExist(platformId))
         {
